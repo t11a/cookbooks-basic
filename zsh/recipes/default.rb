@@ -12,7 +12,6 @@ git "/home/#{username}/.oh-my-zsh" do
   group       username
 end
 
-=begin
 template "/home/#{username}/.zshrc" do
   path    "/home/#{username}/.zshrc"
   source  "zshrc.erb"
@@ -20,7 +19,6 @@ template "/home/#{username}/.zshrc" do
   group   username
   mode    0644
 end
-=end
 
 execute "set zsh as default shell" do
   command "chsh -s $(which zsh) #{username}"
